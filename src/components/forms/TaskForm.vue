@@ -107,7 +107,7 @@ export default {
     }
   }
   .btn--submit {
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     @include respond-to(phone) {
       margin-bottom: 60px;
     }
