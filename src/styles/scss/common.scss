@@ -1,0 +1,72 @@
+@import "_mixins.scss";
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (min-width: $phone) {
+    font-size: 13px;
+  }
+
+  @media screen and (min-width: $tabletPortrait) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: $largeDesktop) {
+    font-size: 18px;
+  }
+}
+
+.btn {
+  display: block;
+  border: none;
+  font-family: inherit;
+  color: #ffffff;
+  cursor: pointer;
+  word-wrap: break-word;
+  &--submit {
+    margin: 0 auto;
+    width: 40%;
+    background-color: #0079bf;
+    text-transform: uppercase;
+    font-size: rem(20px);
+    font-weight: 600;
+    padding: 10px 15px;
+    &:hover {
+      background-color: #0068a5;
+    }
+    @include respond-to(phone) {
+      width: 100%;
+    }
+  }
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin: 0 0 20px;
+  outline: 0;
+  font-size: rem(20px);
+  white-space: pre-wrap;
+}
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
