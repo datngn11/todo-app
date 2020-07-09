@@ -31,5 +31,3 @@ export default {
   }
 }
 </style>
-
-<style src="@/styles/css/common.css" />
