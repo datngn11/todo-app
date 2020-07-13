@@ -6,7 +6,7 @@
       @save-task="saveTask"
       :key="$route.params.id"
       :task="selectedTask"
-    ></router-view>
+    />
     <router-link to="/new" class="btn--add">
       <img src="@/assets/img/icon-add.svg" alt="" />
     </router-link>
@@ -52,7 +52,7 @@ export default {
       this.$router.push("/");
     },
     updateTask(task) {
-      this.tasks = this.tasks.map(t => (t.id === task.id ? task : t));
+      this.tasks = this.tasks.map(t => (t.id === task.id ? { ...task } : t));
       this.$router.push("/");
     },
     logout() {
@@ -62,7 +62,7 @@ export default {
   },
   watch: {
     "$route.params.id"(id) {
-      this.selectedTask = this.tasks.find(t => t.id === id) || {};
+      this.selectedTask = { ...this.tasks.find(t => t.id === id) };
     }
   }
 };
