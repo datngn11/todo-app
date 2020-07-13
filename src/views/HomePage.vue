@@ -33,7 +33,6 @@ export default {
   },
   created() {
     if (localStorage.getItem("currentEmail")) {
-      this.$router.push("/");
       this.tasks = data;
     } else {
       this.$router.push("/login");
