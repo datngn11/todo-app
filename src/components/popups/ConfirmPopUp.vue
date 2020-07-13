@@ -1,14 +1,11 @@
 <template>
-  <div class="popup" role="alert">
-    <div class="popup__container">
+  <div class="popup" role="alert" @click="$emit('close-popup')">
+    <div class="popup__container" @click.stop="">
       <p><slot></slot></p>
       <div class="popup__buttons">
         <span @click="$emit('confirm-remove')">Yes</span>
         <span @click="$emit('close-popup')">No</span>
       </div>
-      <span class="popup-close" @click="$emit('close-popup')">
-        <img src="@/assets/img/icon-close.svg" alt="" />
-      </span>
     </div>
   </div>
 </template>
@@ -59,14 +56,6 @@
         }
       }
     }
-  }
-  .popup-close {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
   }
 }
 </style>
